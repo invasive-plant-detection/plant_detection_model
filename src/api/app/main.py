@@ -1,3 +1,5 @@
+"""Main module for the API"""
+
 from fastapi import FastAPI
 
 from schemas.schemas import PredictionRequestModel, PredictionResponseModel
