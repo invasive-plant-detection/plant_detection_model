@@ -2,7 +2,9 @@
 
 from fastapi import FastAPI
 
+# pylint: disable=E0401
 from schemas.schemas import PredictionRequestModel, PredictionResponseModel
+# pylint: disable=E0401
 from services.prediction_service import PredictionService
 
 prediction_service = PredictionService()
