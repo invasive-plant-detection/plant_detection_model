@@ -25,7 +25,7 @@ class PredictionService:
     def predict(self, request: PredictionRequestModel) -> PredictionResponseModel:
         """Predict the instruction for an image."""
         try:
-            self._is_valid_base64_img(request.base64_img)
+            self.is_valid_base64_img(request.base64_img)
             return PredictionResponseModel(
                 base64_img=request.base64_img,
                 instruction="This is a dummy instruction",
