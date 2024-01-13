@@ -1,3 +1,5 @@
+"""Prediction service module."""
+
 import base64
 
 from app.schemas.schemas import PredictionRequestModel, PredictionResponseModel
@@ -7,11 +9,12 @@ from fastapi import HTTPException
 
 
 class PredictionService:
+    """Prediction service class."""
+
     def __init__(self):
         """Initialize the PredictionService class."""
-        pass
 
-    def _is_valid_base64_img(self, base64_img: str) -> bool:
+    def is_valid_base64_img(self, base64_img: str) -> bool:
         """Check if the base64_img is valid."""
         try:
             base64.b64decode(base64_img)
