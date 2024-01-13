@@ -19,8 +19,8 @@ class PredictionService:
         try:
             base64.b64decode(base64_img)
             return True
-        except Exception:
-            raise InvalidBase64Error("The provided string is not a valid base64.")
+        except Exception as e:
+            raise InvalidBase64Error("The provided string is not a valid base64.") from e
 
     def predict(self, request: PredictionRequestModel) -> PredictionResponseModel:
         """Predict the instruction for an image."""
@@ -31,4 +31,4 @@ class PredictionService:
                 instruction="This is a dummy instruction",
             )
         except InvalidBase64Error as e:
-            raise HTTPException(status_code=400, detail=str(e))
+            raise HTTPException(status_code=400, detail=str(e)) from e

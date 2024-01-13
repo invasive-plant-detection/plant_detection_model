@@ -1,13 +1,12 @@
 """Test PredictionService class."""
 
 import unittest
-import os
 
 from app.services.prediction_service import PredictionService
 from app.exceptions.exceptions import InvalidBase64Error
 from app.schemas.schemas import PredictionRequestModel
 
-with open("tests/res/base64_img.txt") as f:
+with open(file="tests/res/base64_img.txt", encoding="UTF-8") as f:
     VALID_BASE64_IMG = f.read()
 
 
