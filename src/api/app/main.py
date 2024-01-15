@@ -15,7 +15,7 @@ prediction_service = PredictionService()
 app = FastAPI()
 
 
-@app.put("/predict")
+@app.post("/predict")
 def read_root(request: PredictionRequestModel) -> PredictionResponseModel:
     "Predicts the class of the image sent in the request"
     return prediction_service.predict(request)
