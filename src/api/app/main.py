@@ -23,4 +23,5 @@ def read_root(request: PredictionRequestModel) -> PredictionResponseModel:
 
 @app.get("/health")
 def health_check() -> Dict:
+    "Health check endpoint"
     return {"status": "ok"}
