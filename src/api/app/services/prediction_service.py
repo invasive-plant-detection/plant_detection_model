@@ -27,7 +27,7 @@ class PredictionService:
         try:
             self.is_valid_base64_img(request.base64_img)
             return PredictionResponseModel(
-                base64_img=request.base64_img,
+                base64Image=request.base64_img,
                 instruction="This is a dummy instruction",
             )
         except InvalidBase64Error as e:

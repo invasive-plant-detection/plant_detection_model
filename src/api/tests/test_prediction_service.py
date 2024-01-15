@@ -39,7 +39,7 @@ class TestPredictionService(unittest.TestCase):
         """Test predict method."""
 
         # arrange
-        request = PredictionRequestModel(base64_img=VALID_BASE64_IMG)
+        request = PredictionRequestModel(base64Image=VALID_BASE64_IMG)
 
         # act
         result = self.prediction_service.predict(request)
