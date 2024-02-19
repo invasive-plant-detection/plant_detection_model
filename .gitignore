@@ -160,3 +160,6 @@ cython_debug/
 #.idea/
 
 .DS_STORE
+
+# add data due to the large size of the data
+data/01_raw/PlantCLEF2022_trusted_training_metadata.csv
