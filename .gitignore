@@ -166,3 +166,4 @@ data/01_raw/PlantCLEF2022_trusted_training_metadata.csv
 
 # ignore playground data
 notebooks/temp
+notebooks/logs
