@@ -1,0 +1,7 @@
+model:
+  dir: ../../models
+  name: model-20240404122233.h5
+
+image:
+  width: 224
+  height: 224
