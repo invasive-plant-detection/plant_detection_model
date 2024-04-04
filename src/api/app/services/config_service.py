@@ -1,5 +1,7 @@
-import yaml
+"""Configuration service module."""
+
 import os
+import yaml
 
 
 def load_config(relative_path: str) -> dict:
@@ -23,7 +25,7 @@ def load_config(relative_path: str) -> dict:
         )
 
     try:
-        with open(relative_path, "r") as stream:
+        with open(relative_path, mode="r", encoding="UTF-8") as stream:
             config = yaml.safe_load(stream)
     except yaml.YAMLError as e:
         print(f"Error parsing the YAML file: {e}")

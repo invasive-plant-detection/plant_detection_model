@@ -2,14 +2,13 @@
 
 import base64
 import json
+from io import BytesIO
 
 from app.schemas.schemas import PredictionRequestModel, PredictionResponseModel
 from app.exceptions.exceptions import InvalidBase64Error
 from app.services.config_service import load_config
 
 from PIL import Image
-import base64
-from io import BytesIO
 
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array, smart_resize
@@ -21,12 +20,14 @@ from fastapi import HTTPException
 class PredictionService:
     """Prediction service class."""
 
-    def __init__(self, config_path: str = "../config.yaml", class_file="../classes.json"):
+    def __init__(
+        self, config_path: str = "../config.yaml", class_file="../classes.json"
+    ):
         """Initialize the PredictionService class."""
         self.config = load_config(config_path)
         model_path = f"{self.config['model']['dir']}/{self.config['model']['name']}"
         self.model = load_model(model_path)
-        with open(class_file) as f:
+        with open(class_file, encoding="UTF-8") as f:
             self.class_names = json.load(f)
 
     def is_valid_base64_img(self, base64_img: str) -> bool:
