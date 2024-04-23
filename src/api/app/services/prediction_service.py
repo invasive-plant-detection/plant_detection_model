@@ -4,9 +4,9 @@ import base64
 import json
 from io import BytesIO
 
-from app.schemas.schemas import PredictionRequestModel, PredictionResponseModel
-from app.exceptions.exceptions import InvalidBase64Error
-from app.services.config_service import load_config
+from src.api.app.schemas.schemas import PredictionRequestModel, PredictionResponseModel
+from src.api.app.exceptions.exceptions import InvalidBase64Error
+from src.api.app.services.config_service import load_config
 
 from PIL import Image
 
@@ -21,7 +21,7 @@ class PredictionService:
     """Prediction service class."""
 
     def __init__(
-        self, config_path: str = "../config.yaml", class_file="../classes.json"
+        self, config_path: str = "src/config.yaml", class_file="src/classes.json"
     ):
         """Initialize the PredictionService class."""
         self.config = load_config(config_path)

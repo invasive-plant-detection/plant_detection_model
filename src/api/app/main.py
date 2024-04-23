@@ -5,10 +5,10 @@ from typing import Dict
 from fastapi import FastAPI
 
 # pylint: disable=E0401
-from app.schemas.schemas import PredictionRequestModel, PredictionResponseModel
+from src.api.app.schemas.schemas import PredictionRequestModel, PredictionResponseModel
 
 # pylint: disable=E0401
-from app.services.prediction_service import PredictionService
+from src.api.app.services.prediction_service import PredictionService
 
 prediction_service = PredictionService()
 

@@ -3,7 +3,7 @@
 import unittest
 import yaml
 
-from app.services.config_service import load_config
+from src.api.app.services.config_service import load_config
 
 
 class TestConfigService(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestConfigService(unittest.TestCase):
     def test_load_config(self):
         """Test if the config can be loaded."""
         # arrange
-        path = "tests/res/config.yaml"
+        path = "src/api/tests/res/config.yaml"
 
         # act
         result = load_config(path)
@@ -24,7 +24,7 @@ class TestConfigService(unittest.TestCase):
         """Test if the config is invalid."""
 
         # arrange
-        path = "tests/res/config_nok.yaml"
+        path = "src/api/tests/res/config_nok.yaml"
 
         # act & assert
         with self.assertRaises(yaml.YAMLError):

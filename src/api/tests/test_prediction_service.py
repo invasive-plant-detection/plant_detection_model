@@ -3,13 +3,13 @@
 import unittest
 import json
 
-from app.services.prediction_service import PredictionService
-from app.exceptions.exceptions import InvalidBase64Error
-from app.schemas.schemas import PredictionRequestModel
+from src.api.app.services.prediction_service import PredictionService
+from src.api.app.exceptions.exceptions import InvalidBase64Error
+from src.api.app.schemas.schemas import PredictionRequestModel
 
 import numpy as np
 
-with open(file="tests/res/base64_img.txt", encoding="UTF-8") as f:
+with open(file="src/api/tests/res/base64_img.txt", encoding="UTF-8") as f:
     VALID_BASE64_IMG = f.read()
 
 
@@ -18,7 +18,7 @@ class TestPredictionService(unittest.TestCase):
 
     def setUp(self):
         self.prediction_service = PredictionService(
-            "tests/res/config.yaml", "tests/res/classes.json"
+            "src/api/tests/res/config.yaml", "src/api/tests/res/classes.json"
         )
 
     def test_valid_base64(self):
@@ -56,7 +56,7 @@ class TestPredictionService(unittest.TestCase):
         """Test get_class method."""
         # arrange
         probabilities = np.array([0.1, 0.2, 0.7])
-        with open("tests/res/classes.json", encoding='UTF-8') as file:
+        with open("src/api/tests/res/classes.json", encoding='UTF-8') as file:
             class_names = json.load(file)
 
         # act

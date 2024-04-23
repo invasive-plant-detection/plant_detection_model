@@ -1,5 +1,5 @@
 model:
-  dir: ../../models
+  dir: models
   name: model-20240404122233.h5
 
 image:

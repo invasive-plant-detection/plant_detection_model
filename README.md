@@ -11,13 +11,13 @@ following
 
 ## Run the fastapi web server 🚀
 
-1. Go the the src directory `cd src/api`
+1. Go the the root directory
 2. Run the server using `uvicorn app.main:app --reload`
 
 ## Run the tests 🧪
 
-1. Go the the src directory `cd src/api`
-2. Run the tests with unittest using `python -m unittest`
+1. Go the the root directory
+2. Run the tests with unittest using `python -m unittest discover -s src/api/tests -p "test_*.py"`
 
 ## Guidelines 📖
 
