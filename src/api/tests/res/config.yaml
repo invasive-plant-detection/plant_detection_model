@@ -1,6 +1,6 @@
 model:
   dir: models
-  name: model-20240404122233.h5
+  name: model-20240423165111.keras
 
 image:
   width: 224

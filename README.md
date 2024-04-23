@@ -12,7 +12,7 @@ following
 ## Run the fastapi web server 🚀
 
 1. Go the the root directory
-2. Run the server using `uvicorn app.main:app --reload`
+2. Run the server using `uvicorn src.api.app.main:app --reload`
 
 ## Run the tests 🧪
 
