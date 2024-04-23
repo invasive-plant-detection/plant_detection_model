@@ -45,6 +45,10 @@ class PredictionService:
         width = self.config["image"]["width"]
         height = self.config["image"]["height"]
         image = Image.open(BytesIO(base64.b64decode(base64_img)))
+
+        if image.mode != "RGB":
+            image = image.convert("RGB")
+
         image_np = img_to_array(image)
         image_np = smart_resize(image_np, (width, height))
         return np.expand_dims(image_np, axis=0)
