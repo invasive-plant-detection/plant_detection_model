@@ -1,7 +1,6 @@
 model:
   dir: models
-  name: model-20240423165111.keras
-
+  name: MobileNetV2-0.6771-20240424-092238.keras
 image:
   width: 224
   height: 224

@@ -68,7 +68,7 @@ class PredictionService:
             predicted_class = self.get_class(probabilites)
             return PredictionResponseModel(
                 base64Image=request.base64_img,
-                instruction=f"The predicted class is {predicted_class}",
+                instruction=f"The predicted class is {predicted_class} with a probability of {probabilites[0][np.argmax(probabilites)]:.2f}",
             )
         except InvalidBase64Error as e:
             raise HTTPException(status_code=400, detail=str(e)) from e
